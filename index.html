@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/assets/css/style.css"/>
     <title>Work Day Scheduler</title>
   </head>
 
@@ -30,9 +30,88 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
+      <div class="row">
+        <div class="col-lg-1 hour">9AM</div>
+        <textarea class="col-lg-9 description"> test description</textarea>
+        <button class="saveBtn"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row">  
+        <div class="col-lg-1 hour">9AM</div>
+        <textarea class="col-lg-9 description"> test description</textarea>
+        <button class="saveBtn"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row">  
+        <div class="col-lg-1 hour">9AM</div>
+        <textarea class="col-lg-9 description"> test description</textarea>
+        <button class="saveBtn"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row">  
+        <div class="col-lg-1 hour">9AM</div>
+        <textarea class="col-lg-9 description"> test description</textarea>
+        <button class="saveBtn"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row">  
+        <div class="col-lg-1 hour">9am</div>
+        <textarea class="col-lg-9 description"> test description</textarea>
+        <button class="saveBtn"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row">  
+        <div class="col-lg-1 hour">9am</i></div>
+        <textarea class="col-lg-9 description"> test description</textarea>
+        <button class="saveBtn"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row">  
+        <div class="col-lg-1 hour">9AM</div>
+        <textarea class="col-lg-9 description"> test description</textarea>
+        <button class="saveBtn"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row">  
+        <div class="col-lg-1 hour">9AM</div>
+        <textarea class="col-lg-9 description"> test description</textarea>
+        <button class="saveBtn"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row">  
+        <div class="col-lg-1 hour">9AM</div>
+        <textarea class="col-lg-9 description"> test description</textarea>
+        <button class="saveBtn"><i class="fas fa-save"></i></button>
+      </div>
+
+   
+      
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
+
+  <script>
+
+//display current day in #currentDay
+var currentDay = moment().format('dddd, MMMM Do YYYY')
+$('#currentDay').text(currentDay);
+
+
+
+
+// also, note style.css includes classes for timeblock, row, hour, past, present, future, saveBtn, so assign classes accordingly probably using jQuery in some cases...
+
+
+
+
+
+//color-code timeblock to indicate past, present or future
+
+
+
+//click in time block to enter an event
+
+
+//click save button for time block to save to local storage
+
+
+//when page is refreshed, saved event persists.
+
+//move this script into it's own js file and link it...
+
+  </script>
 </html>
