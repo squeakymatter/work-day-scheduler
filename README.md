@@ -21,5 +21,5 @@
 ## Mock-Up
 The following animation demonstrates the application functionality:
 
-day planner demo
+![mockup](mockup-demo.gif)
 
