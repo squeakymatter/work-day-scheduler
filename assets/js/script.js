@@ -1,19 +1,49 @@
-//display current day at top of calendar
+// display current day on page
+$("#currentDay").text(moment().format("dddd, MMMM Do"));
 
-//create timeblocks for business hours (9am - 5pm)
-//use bootstrap grid for this. 
-// also, note style.css includes classes for timeblock, row, hour, past, present, future, saveBtn, so assign classes accordingly probably using jQuery in some cases...
+// listen for .saveBtn clicks
+$(".saveBtn").on("click", function () {
+  //get description field value
+  var userInput = $(this).siblings(".description").val();
+  var timeSlot = $(this).parent().attr("id");
 
+  // save to localStorage
+  localStorage.setItem(timeSlot, userInput);
+});
 
+//retrieve items from localStorage (refresh page to test)
 
-//color-code timeblock to indicate past, present or future
+$("#time9 .description").val(localStorage.getItem("time9"));
+$("#time10 .description").val(localStorage.getItem("time10"));
+$("#time11 .description").val(localStorage.getItem("time11"));
+$("#time12 .description").val(localStorage.getItem("time12"));
+$("#time13 .description").val(localStorage.getItem("time13"));
+$("#time14 .description").val(localStorage.getItem("time14"));
+$("#time15 .description").val(localStorage.getItem("time15"));
+$("#time20 .description").val(localStorage.getItem("time20"));
+$("#time23 .description").val(localStorage.getItem("time23"));
 
+function trackHour() {
+  //check each time block with a loop
+  $(".time-block").each(function () {
+    //use momentJS to compare time slot with current hour
+    var timeSlotHour = moment(parseInt($(this).attr("id").replace("time", "")));
+    var currentHour = moment(moment().hour());
 
+    //compare current time in hours to scheduled time of item
+    //change color of description field based on past/present/future in hours
+    if (currentHour.isSame(timeSlotHour)) {
+      $(this).children(".description").removeClass("past future");  
+      $(this).children(".description").addClass("present");
+    } else if (currentHour.isAfter(timeSlotHour)) {
+      $(this).children(".description").removeClass("present future");
+      $(this).children(".description").addClass("past");
+    } else currentHour.isBefore(timeSlotHour);
+    {
+      $(this).children(".description").removeClass("present past");
+      $(this).children(".description").addClass("future");
+    }
+  });
+}
 
-//click in time block to enter an event
-
-
-//click save button for time block to save to local storage
-
-
-//when page is refreshed, saved event persists.
+trackHour();
